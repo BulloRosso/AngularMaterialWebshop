@@ -1,0 +1,89 @@
+﻿<section ng-controller="IndexCtrl">
+    
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+                <md-icon aria-label="Menu" md-svg-icon="//s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+            </md-button>
+            <h1>Browse Courses</h1>
+            <span flex></span>
+           
+            <div class="material-icons material-2x">event</div>
+             <div class="badge">
+                {{ EventListFiltered().length }}
+            </div>
+
+        </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 md-padding no-padding-top" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          
+            <h4>Events within range of <span class="text-primary">{{ filterRange }} km</span></h4>
+            <div layout>
+                  <div flex="10" layout layout-align="center center">
+                    <span class="md-body-1">km</span>
+                  </div>
+                  <md-slider class="md-primary" flex md-discrete ng-model="filterRange" step="5" min="1" max="50" aria-label="rating">
+                  </md-slider>
+            </div>
+
+            <h4>Date Range</h4>
+            <form>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Starting from</label>
+                  <input type="date" ng-model="filterStartDate">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Ending</label>
+                  <input type="date" ng-model="filterEndDate">
+                </md-input-container>
+            </div>
+            </form>
+
+            <h4>Fully booked events</h4>
+            <md-switch ng-model="filterShowFullyBooked" class="md-warn" aria-label="Switch 1">
+                {{ filterShowFullyBookedLabel() }}
+            </md-switch>
+
+        </md-sidenav>
+        <md-content flex md-scroll-y class="md-padding">
+        <md-grid-list
+                        md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                        md-row-height-gt-md="3:2" md-row-height="3:2"
+                        md-gutter="12px" md-gutter-gt-sm="8px" >
+            
+               <!-- http://www.getmdl.io/components/ -->
+                <md-grid-tile ng-repeat="event in EventListFiltered()"
+                    md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+        
+                 <div style="position:absolute;top:8px;left:8px;">
+                  <div class="text-shadow" ng-show="{{ allocationState(event) > 70 && allocationState(event) < 100  }}">
+                    <span class="text-info" title="Only {{ freeSeats(event) }} left!"><i class="material-icons">event_seat</i> <div class="badge-inline">{{ freeSeats(event) }}</div></span>
+                  </div>
+                  <div class="shadow-text" ng-show="{{ allocationState(event) == 100 }}">
+                      <span class="text-alert"><i class="material-icons">event_seat</i> <div class="badge-inline bg-alert">{{ freeSeats(event) }}</div></span>
+                  </div>
+                 </div>
+                 <div ng-show="hasDateFiltersActive()" style="position:absolute;width:100%;text-align:right;padding-right:10px;padding-top:10px;color:white;text-shadow: 1px 1px 1px #000;">
+                    <i class="material-icons">event</i> 25.03.-28.03.2015
+                 </div>
+                
+                <img ng-src="/content/img/{{event.ImagePath}}" style="width:100%;cursor:pointer" ng-click="navigate(event.Id)" alt="Image">
+           
+              <md-grid-tile-footer>
+                    
+                  <h3 style="font-size:15px;text-shadow: 1px 1px 1px #000;">{{event.Title}}</h3>
+
+              </md-grid-tile-footer>
+            </md-grid-tile>
+
+          </md-grid-list>
+          </md-content>
+    </div>
+
+</section>
+
+

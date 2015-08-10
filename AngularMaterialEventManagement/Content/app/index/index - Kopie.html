@@ -1,0 +1,89 @@
+﻿<section ng-controller="IndexCtrl">
+    
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+                <md-icon aria-label="Menu" md-svg-icon="//s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+            </md-button>
+            <h1>Event Management</h1>
+            <span flex></span>
+           
+            <div class="material-icons material-2x">event</div>
+             <div class="badge">
+                {{ EventListFiltered().length }}
+            </div>
+
+        </div>
+    </md-toolbar>
+    <div layout="row" flex>
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 md-padding no-padding-top" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+          
+            <h4>Events within range of <span class="text-primary">{{ filterRange }} km</span></h4>
+            <div layout>
+                  <div flex="10" layout layout-align="center center">
+                    <span class="md-body-1">km</span>
+                  </div>
+                  <md-slider class="md-primary" flex md-discrete ng-model="filterRange" step="5" min="1" max="50" aria-label="rating">
+                  </md-slider>
+            </div>
+
+            <h4>Date Range</h4>
+            <form>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Starting from</label>
+                  <input type="date" ng-model="filterStartDate">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                  <label>Ending</label>
+                  <input type="date" ng-model="filterEndDate">
+                </md-input-container>
+            </div>
+            </form>
+
+            <h4>Fully booked events</h4>
+            <md-switch ng-model="filterShowFullyBooked" aria-label="Switch 1">
+                {{ filterShowFullyBookedLabel() }}
+            </md-switch>
+
+        </md-sidenav>
+        <div layout="column" flex id="content">
+            <md-content layout="column" flex class="md-padding">
+            
+               <!-- http://www.getmdl.io/components/ -->
+
+               <md-card ng-repeat="event in EventListFiltered()">
+                  <img ng-src="{{event.ImagePath}}" class="md-card-image" ng-click="navigate(event.Id)" alt="Image">
+                  <div class="text-info" ng-show="{{ allocationState(event) > 70 && allocationState(event) < 100  }}">
+                     <strong>Only {{ freeSeats(event) }} free seats!</strong>
+                  </div>
+                  <div class="text-alert" ng-show="{{ allocationState(event) == 100 }}">
+                      Sold out!
+                  </div>
+                  <md-card-content class="no-padding-top">
+                    <h2 class="md-title">{{event.Title}}</h2>
+                    <p>
+                        <i class="material-icons">event</i> 25.03.2015 - 28.03.2015
+                    </p>
+                    <p class="descr-text no-bottom">
+                      {{event.Description}}
+                    </p>
+                  </md-card-content>
+                  <div class="pull-left">
+                    
+                  </div>
+                  <div class="md-actions pull-right" layout="row" layout-align="end center">
+                    <md-button ng-click="register()" class="md-raised md-warn">Book now</md-button>
+                    <md-button ng-click="navigate(event.Id)">More</md-button></a>
+                  </div>
+                </md-card>
+
+           
+
+            </md-content>
+        </div>
+    </div>
+
+</section>

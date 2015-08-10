@@ -1,0 +1,72 @@
+﻿<section ng-controller="EventCtrl">
+
+   
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <md-button ng-click="navigateUp()" class="md-icon-button">
+                <i class="material-icons">arrow_back</i>
+            </md-button>
+            <h1>{{Event.Title}}</h1>
+            <span flex></span>
+           
+            <md-button ng-click="register()" class="md-raised md-warn">Book now</md-button>
+        </div>
+    </md-toolbar>
+    <div layout="row" flex>
+       
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2 md-padding no-padding-top" md-component-id="chatpane">
+
+            <p>
+                Just ask a question - our support staff is ready to assist you with any question any time!
+            </p>
+
+        </md-sidenav>
+
+        <md-tabs flex md-dynamic-height md-border-bottom>
+            <md-tab label="Overview" >
+            <md-content  >
+
+                <div hide-gt-sm style="height:240px;max-height:240px;">
+                    <img  ng-src="/content/img/{{Event.ImagePath}}" style="width:100%"  alt="">
+                </div>
+
+                <div layout="row">
+
+                       
+
+                <div class="md-padding">
+                    <i class="material-icons">event</i> 25.03.2015 - 28.03.2015
+            
+                    <p class="descr-text no-bottom">
+                        {{Event.Description}}
+                    </p>
+                </div>
+
+                <div hide-sm flex="40">
+                    <img  ng-src="/content/img/{{Event.ImagePath}}"  alt="">
+                </div>
+
+                </div>
+
+
+            </md-content>
+            </md-tab>
+            <md-tab label="Dates">
+            <md-content flex="100" class="md-padding">
+                ab
+            </md-content>
+            </md-tab>
+            <md-tab label="Participants">
+            <md-content flex="100" class="md-padding">
+                cd
+            </md-content>
+            </md-tab>
+        </md-tabs>
+            
+    </div>
+
+    <md-button ng-click="toggleChatPane()" style="position:fixed;right:10px;bottom:10px;" class="md-fab" aria-label="Ask a question">
+            <i class="material-icons">chat</i>
+    </md-button>
+
+</section>
