@@ -33,7 +33,9 @@ Hopefully, this demo SPA will answer the questions above along with some other i
 <li>Course date (upper right corner)</li>
 <li>Booking status indicator (upper left corner)</li>
 </ul>
-As a suggestion to keep the design "clear" the course date is only shown if the user set one of the filters under the section "Date Range".
+As a suggestion to keep the design "clear" the course date is only shown if the user set one of the filters under the section "Date Range":
+
+![spa_tile](https://cloud.githubusercontent.com/assets/10236695/9183563/2f53329c-3fb0-11e5-9295-09c29e0a308d.PNG)
 </p>
 
 
