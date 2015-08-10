@@ -26,6 +26,17 @@ Hopefully, this demo SPA will answer the questions above along with some other i
 
 ![spa_index](https://cloud.githubusercontent.com/assets/10236695/9182314/493d3582-3faa-11e5-9494-fcab4c560385.PNG)
 
+<p>
+<strong>Tiles</strong> inside the grid represent the available courses and illustrate one problem with minimalistic design: stakeholders will try to squeeze in as many information as they can. In the demo the place is completely taken by:
+<ul>
+<li>Course title</li>
+<li>Course date (upper right corner)</li>
+<li>Booking status indicator (upper left corner)</li>
+</ul>
+As a suggestion to keep the design "clear" the course date is only shown if the user set one of the filters under the section "Date Range".
+</p>
+
+
 <p>The detail page features a tab pane:</p>
 
 ![spa_detail](https://cloud.githubusercontent.com/assets/10236695/9182316/493d76b4-3faa-11e5-87db-76983167e896.PNG)
