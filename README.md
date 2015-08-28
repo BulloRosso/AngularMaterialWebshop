@@ -26,20 +26,19 @@ Hopefully, this demo will answer the questions above along with some other issue
 ![_ws1](https://cloud.githubusercontent.com/assets/10236695/9558921/f0e45032-4deb-11e5-8ba6-0481dedaaf8b.JPG)
 
 <p>
-<strong>Tiles</strong> inside the grid represent the available courses and illustrate one problem with minimalistic design: stakeholders will try to squeeze in as many information as they can. In the demo the place is completely taken by:
+<strong>Tiles</strong> inside a flex grid on the welcome page are meant to test the versatility of the grid component. Currently 4 types of tiles are showcased:
 <ul>
-<li>Course title</li>
-<li>Course date (upper right corner)</li>
-<li>Booking status indicator (upper left corner)</li>
+<li>Image tile</li>
+<li>Image tile with con in the header</li>
+<li>Image tile with call-to-action button</li>
+<li>Text tile</li>
 </ul>
-As a suggestion to keep the design "clear" the course date is only shown if the user set one of the filters under the section "Date Range":
-</p>
-![spa_tile](https://cloud.githubusercontent.com/assets/10236695/9183563/2f53329c-3fb0-11e5-9295-09c29e0a308d.PNG)
 
-<p>The detail page features a tab pane:</p>
+<p>The cart menu showcases some animations:</p>
 
-![spa_detail](https://cloud.githubusercontent.com/assets/10236695/9182316/493d76b4-3faa-11e5-87db-76983167e896.PNG)
+![_ws2](https://cloud.githubusercontent.com/assets/10236695/9558992/b5faffb0-4dec-11e5-92e3-6662057bf722.JPG)
 
-<p>Registering as a new user reveals an interesting new approach to web forms:</p>
-
-![spa_register](https://cloud.githubusercontent.com/assets/10236695/9182315/493d5666-3faa-11e5-8a41-e878fb09c3c1.PNG)
+<ul>
+<li>Slide in for the offcanvas menu</li>
+<li>Slide out for deleted cart items</li>
+</ul>
