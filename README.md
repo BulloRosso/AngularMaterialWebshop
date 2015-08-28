@@ -1,9 +1,11 @@
-# AngularMaterialEventApp
+# AngularMaterialWebshop
 A demo single page application using angular 1.4 and material design for angular 0.10 hosted in an ASP.NET MVC 4/WebAPI project.
 
 <h2>What is this all about?</h2>
 
-<p>This tech demo shows how to build a real world SPA using <strong>Google's Material Design</strong> instead of the predominant Bootstrap 3 framework.</p>
+<p>This is a proof of concept for an application using <strong>Google's Material Design</strong> instead of the predominant Bootstrap 3 framework.</p>
+
+<p>Attention: This is not a ready-to-go template or starter-kit!</p>
 
 <p>
 If you know how to use Bootstrap there are few questions you might face relatively early:
@@ -16,13 +18,10 @@ If you know how to use Bootstrap there are few questions you might face relative
 </p>
 
 <p>
-Hopefully, this demo SPA will answer the questions above along with some other issues you might encounter on your way to your first material design app...
+Hopefully, this demo will answer the questions above along with some other issues you might encounter on your way to your first material design app...
 </p>
 
-<h2>Example use case: book photography courses</h2>
-
-<p>The index page is a typical search driven design: the filters on the lefthand side allow the user to find photography courses nearby:
-</p>
+<h2>Example use case: shoe webshop</h2>
 
 ![spa_index](https://cloud.githubusercontent.com/assets/10236695/9182314/493d3582-3faa-11e5-9494-fcab4c560385.PNG)
 
