@@ -34,7 +34,7 @@ Hopefully, this demo will answer the questions above along with some other issue
 <li>Text tile</li>
 </ul>
 
-<p>The cart menu showcases some animations:</p>
+<p>The <strong>shopping cart</strong> showcases some animations:</p>
 
 ![_ws2](https://cloud.githubusercontent.com/assets/10236695/9558992/b5faffb0-4dec-11e5-92e3-6662057bf722.JPG)
 
