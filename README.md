@@ -21,9 +21,9 @@ If you know how to use Bootstrap there are few questions you might face relative
 Hopefully, this demo will answer the questions above along with some other issues you might encounter on your way to your first material design app...
 </p>
 
-<h2>Example use case: shoe webshop</h2>
+<h2>Example use case: Webshop</h2>
 
-![spa_index](https://cloud.githubusercontent.com/assets/10236695/9182314/493d3582-3faa-11e5-9494-fcab4c560385.PNG)
+![_ws1](https://cloud.githubusercontent.com/assets/10236695/9558921/f0e45032-4deb-11e5-8ba6-0481dedaaf8b.JPG)
 
 <p>
 <strong>Tiles</strong> inside the grid represent the available courses and illustrate one problem with minimalistic design: stakeholders will try to squeeze in as many information as they can. In the demo the place is completely taken by:
