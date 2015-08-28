@@ -1,11 +1,13 @@
 # AngularMaterialWebshop
-A demo single page application using angular 1.4 and material design for angular 0.10 hosted in an ASP.NET MVC 4/WebAPI project.
+A demo application using angular 1.4 and material design for angular 0.10 hosted in an ASP.NET MVC 5/WebAPI project.
 
 <h2>What is this all about?</h2>
 
 <p>This is a proof of concept for an application using <strong>Google's Material Design</strong> instead of the predominant Bootstrap 3 framework.</p>
 
 <p>Attention: This is not a ready-to-go template or starter-kit!</p>
+
+<p>Attention: This is not a single page application! AngularJS is just used to extend single pages - the heavylifting is done by ASP.NET MVC views and controllers.
 
 <p>
 If you know how to use Bootstrap there are few questions you might face relatively early:
