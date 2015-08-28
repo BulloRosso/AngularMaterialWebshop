@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions
+namespace AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

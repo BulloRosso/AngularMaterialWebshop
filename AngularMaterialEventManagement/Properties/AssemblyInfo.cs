@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen zu einer Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("AngularMaterialEventManagement")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("AngularMaterialWebshop")]
+[assembly: AssemblyDescription("Demo-App")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AngularMaterialEventManagement")]
+[assembly: AssemblyCompany("e-ntegration GmbH")]
+[assembly: AssemblyProduct("AngularMaterialWebshop")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

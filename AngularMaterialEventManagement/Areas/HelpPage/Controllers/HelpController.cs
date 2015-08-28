@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions;
-using AngularMaterialEventManagement.Areas.HelpPage.Models;
+using AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions;
+using AngularMaterialWebshop.Areas.HelpPage.Models;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.Controllers
+namespace AngularMaterialWebshop.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

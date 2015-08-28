@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions
+namespace AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

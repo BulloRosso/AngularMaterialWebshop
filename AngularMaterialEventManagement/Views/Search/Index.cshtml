@@ -1,0 +1,95 @@
+﻿@using AngularMaterialWebshop.Models
+@{
+    ViewBag.Title = "Index";
+
+    
+}
+@model List<Product>
+
+<script>
+
+    var passSearchResult = @Html.Raw(Json.Encode(Model));
+
+</script>
+
+<section ng-controller="SearchCtrl">
+
+    <md-content>
+       <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button ">
+                <i class="material-icons">arrow_back</i>
+            </md-button>
+
+            <a href="@Url.Action("welcome","home")"><img src="@Url.Content("~/Content/img/logo3.png")" class="logo" /></a>
+            <h1><i class="material-icons">search</i>@ViewBag.SearchTerm</h1>
+
+
+        <span flex></span>
+        <md-button >Sign In</md-button></a>
+      </div>
+    </md-toolbar>
+  </md-content>
+
+  <md-content style="border-bottom:1px solid #ccc">
+       <md-input-container style="padding-bottom:0px;">
+       @* <label>Lieferbar</label>*@
+        <md-select ng-model="State" style="padding-top:5px; padding-bottom:14px;padding-left:10px;">
+          <md-option ng-repeat="state in States" value="{{state}}">{{state}}</md-option>
+        </md-select>
+      </md-input-container>
+  </md-content>
+
+  <md-content layout="row" layout-sm="column" class="grey">
+      
+      <md-list>
+
+          <md-subheader class="md-no-sticky grey">Ihre Suche lieferte @Model.Count Treffer:</md-subheader>
+          
+          <md-list-item  hide-sm class="md-3-line" ng-repeat="item in ResultItems">
+
+              <img ng-click="gotoProduct(item.Id)" ng-src="/content/img/product-{{item.Id}}.jpg" class="search-product-img" alt="{{item.Title}}" />
+            
+                <div class="md-list-item-text" flex>
+                  <h3>{{ item.Title }}</h3>
+                  <h4>{{ getPriceLabel(item.Price) }}</h4>
+                  <p>{{ item.Description }}</p>
+                </div>
+
+                <md-icon ng-click="doSecondaryAction($event)" aria-label="In den Warenkorb" class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"><i class="material-icons">add_shopping_cart</i></md-icon>
+
+          </md-list-item>
+
+          <md-list-item  hide-gt-sm class="md-3-line" ng-repeat="item in ResultItems">
+            
+            <md-whiteframe class="md-whiteframe-z1" layout layout-align="center center" style="margin-bottom:10px;">
+                <img ng-click="gotoProduct(item.Id)" ng-src="/content/img/product-{{item.Id}}.jpg" class="search-product-img" alt="{{item.Title}}" />
+                <br style="clear:both" />
+                <div class="md-list-item-text">
+                    <h3>{{ item.Title }}</h3>
+                    <h4>{{ getPriceLabel(item.Price) }}</h4>
+                    <p>{{ item.Description }}</p>
+                </div>
+            
+                <md-icon ng-click="doSecondaryAction($event)" aria-label="In den Warenkorb" style="margin-right:10px;" class="no-focus md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}"><i class="material-icons">add_shopping_cart</i></md-icon>
+            </md-whiteframe>
+
+          </md-list-item>
+         @* <md-divider ></md-divider>*@
+     
+    </md-list>
+
+      <md-content layout-padding hide-sm hide-md style="padding-top:20px;padding-left:20px;">
+          <img src="http://media.fussmatten.de/media/cms/emotion_versand-lieferung.jpg" style="width:200px;" />
+      
+          <div class="text-figure">Für registrierte Kunden</div>
+      </md-content>
+
+  </md-content>
+
+</section>
+
+@section scripts {
+
+<script src="@Url.Content("~/Content/app/search/search.controller.js")"></script>
+}

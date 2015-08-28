@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions;
-using AngularMaterialEventManagement.Areas.HelpPage.Models;
+using AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions;
+using AngularMaterialWebshop.Areas.HelpPage.Models;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage
+namespace AngularMaterialWebshop.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

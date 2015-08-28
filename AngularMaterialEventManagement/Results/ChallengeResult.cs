@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace AngularMaterialEventManagement.Results
+namespace AngularMaterialWebshop.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

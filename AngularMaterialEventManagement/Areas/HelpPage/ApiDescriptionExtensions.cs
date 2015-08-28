@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage
+namespace AngularMaterialWebshop.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

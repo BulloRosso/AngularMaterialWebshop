@@ -8,106 +8,40 @@
     <meta name="viewport" content="initial-scale=1" />
 
      <!-- Material Design Lite -->
-    @*<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">*@
+    <link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.0/material.green-amber.min.css">
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900,400italic">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
    
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" > -->
 
-    <style>
-        .text-shadow {
-            text-shadow: 1px 1px 1px #000;
-        }
-        .material-2x {
-           
-            font-size: 36px;
-        }
-        .material-fix-badge-on-icon {
-          
-        }
-        .material-icons {
-            text-align:center;
-            vertical-align:middle;
-        }
-        .descr-text {
-            color:#888;
-        }
-        .no-bottom {
-            margin-bottom:4px;
-        }
-        .no-padding-top {
-            padding-top:0px;
-        }
-        .badge {
-            border-radius:50%;
-            position:relative;
-            top:-10px;
-            left:-10px;
-            width:22px;
-            height:22px;
-            font-size:14px;
-            background-color:gold;
-            text-align:center;
-            padding-top:3px;
-            font-weight:bold;
-            color:black;
-        }
-        .badge-inline {
-            border-radius:50%;
-            position:relative;
-            top:-35px;
-            left:22px;
-            width:22px;
-            height:22px;
-            font-size:14px;
-            background-color:gold;
-            text-align:center;
-            padding-top:3px;
-            font-weight:bold;
-            color:black;
-            text-shadow:none;
-        }
-        .pull-left {
-            float:left;
-        }
-        .pull-right {
-            float:right;
-        }
-        .text-alert {
-            color:rgb(244,67,54);
-        }
-        .bg-alert {
-            background:rgb(244,67,54);
-        }
-        .text-info {
-           color:gold;
-        }
-        .text-primary {
-            color: rgb(76,175,80);
-        }
-       
-    </style>
+    <link rel="stylesheet" href="@Url.Content("~/Content/WebShop.css")">
 
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body layout="column" ng-app="EventApp" >
-   
-    <div ng-view>
-    @RenderBody()
+<body layout="column" ng-app="EventApp">
+
+    <div ng-view id="wrap">
+        @RenderBody()
     </div>
+    
+    @Html.Partial("_FooterPartial")
 
     @Scripts.Render("~/bundles/jquery")
 
     <!-- Material Design Lite -->
     @*<script src="//storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>*@
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.js"></script>
+    <!-- 1.3.15 -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-route.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular-sanitize.js"></script>
 
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-aria.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material/0.10.0/angular-material.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
 
@@ -117,6 +51,7 @@
     <script src="@Url.Content("~/Content/app/index/index.controller.js")"></script>
     <script src="@Url.Content("~/Content/app/event/event.controller.js")"></script>
     <script src="@Url.Content("~/Content/app/register/register.controller.js")"></script>
+    <script src="@Url.Content("~/Content/app/components/toolbar.controller.js")"></script>
 
     @RenderSection("scripts", required: false)
 </body>

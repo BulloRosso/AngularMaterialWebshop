@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Optimization;
 
-namespace AngularMaterialEventManagement
+namespace AngularMaterialWebshop
 {
     public class BundleConfig
     {

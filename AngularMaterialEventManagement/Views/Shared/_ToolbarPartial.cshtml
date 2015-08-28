@@ -1,0 +1,67 @@
+﻿<md-toolbar ng-controller="ToolbarCtrl">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="toggleNav()" ng-hide="searchBoxVisible" hide-gt-sm class="md-icon-button">
+            <i class="material-icons">menu</i>
+        </md-button>
+
+        <a href="@Url.Action("welcome","index")"><img src="@Url.Content("~/Content/img/logo3.png")" class="logo" /></a>
+        <h1><strong style="font-weight:900">Lotus</strong><span style="font-weight:300"> Webshop</span></h1>
+
+        <span layout="row" flex layout-align="end center">
+
+            <form ng-show="searchBoxVisible" layout="row"   flex ng-submit="$event.preventDefault()">
+
+                <span ng-click="toggleSearchBox()" style="cursor:pointer;margin-right:10px;margin-top:8px;" ng-show="searchBoxVisible"><i class="material-icons">arrow_back</i></span>
+
+                <md-autocomplete flex
+                                 id="mainSearchBox" class="slide-toggle"
+                                 ng-keypress="submitSearch($event)"
+                                 style="margin-right:10px"
+                                 ng-disabled="isDisabled"
+                                 md-no-cache="noCache"
+                                 md-selected-item="selectedItem"
+                                 md-search-text-change="searchTextChange(searchText)"
+                                 md-search-text="searchText"
+                                 md-selected-item-change="selectedItemChange(item)"
+                                 md-items="item in querySearch(searchText)"
+                                 md-item-text="item.name"
+                                 md-min-length="0"
+                                 placeholder="Suchbegriff(e)"
+                                 md-menu-class="autocomplete-custom-template">
+                    <md-item-template>
+                        <span class="item-title">
+                            <i class="material-icons">{{item.icon}}</i>
+                            <span> {{item.name}} </span>
+                        </span>
+                        <span class="item-metadata">
+                            <span class="item-metastat">
+                                <strong>{{item.watchers}}</strong> watchers
+                            </span>
+                            <span class="item-metastat">
+                                <strong>{{item.forks}}</strong> forks
+                            </span>
+                        </span>
+                    </md-item-template>
+                </md-autocomplete>
+            </form>
+
+            <div ng-click="toggleSearchBox()" ng-hide="searchBoxVisible" style="cursor:pointer;margin-right:10px;" class="material-icons">search</div>
+        </span>
+
+        <section ng-hide="$rootScope.isWelcome" hide-sm>
+            <md-button>
+                Aktionen
+            </md-button>
+            <md-button>
+                Sortiment
+            </md-button>
+            <md-button>
+                Beratung
+            </md-button>
+        </section>
+
+
+        <i class="material-icons" ng-click="toggleCart()">shopping_cart</i>
+        <i class="cart-badge" ng-bind="$rootScope.itemsInCart"></i>
+    </div>
+</md-toolbar>

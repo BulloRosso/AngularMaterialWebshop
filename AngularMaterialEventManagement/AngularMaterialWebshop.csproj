@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AngularMaterialEventManagement</RootNamespace>
-    <AssemblyName>AngularMaterialEventManagement</AssemblyName>
+    <RootNamespace>AngularMaterialWebshop</RootNamespace>
+    <AssemblyName>AngularMaterialWebshop</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -217,6 +217,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +226,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MeViewModels.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -234,18 +237,47 @@
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\app\app.config.js" />
     <Content Include="Content\app\app.module.js" />
+    <Content Include="Content\app\cart\cart.controller.js" />
+    <Content Include="Content\app\components\toolbar.controller.js" />
+    <Content Include="Content\app\components\dialog.controller.js" />
     <Content Include="Content\app\event\event.controller.js" />
     <Content Include="Content\app\event\event.html" />
     <Content Include="Content\app\index\index - Kopie.html" />
     <Content Include="Content\app\index\index.controller.js" />
     <Content Include="Content\app\index\index.html" />
+    <Content Include="Content\app\product\product.controller.js" />
     <Content Include="Content\app\register\register.controller.js" />
     <Content Include="Content\app\register\register.html" />
-    <Content Include="Content\img\event-1.png" />
-    <Content Include="Content\img\event-2.png" />
-    <Content Include="Content\img\event-3.png" />
-    <Content Include="Content\img\event-4.png" />
+    <Content Include="Content\app\search\add-to-cart.dialog.html" />
+    <Content Include="Content\app\search\search.controller.js" />
+    <Content Include="Content\app\welcome\welcome.controller.js" />
+    <Content Include="Content\app\welcome\welcome.html" />
+    <Content Include="Content\img\fashion.PNG" />
+    <Content Include="Content\img\house.PNG" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo2.png" />
+    <Content Include="Content\img\logo3.png" />
+    <Content Include="Content\img\post-facebook.svg" />
+    <Content Include="Content\img\post-instagram.svg" />
+    <Content Include="Content\img\post-linkedin.svg" />
+    <Content Include="Content\img\post-pinterest.svg" />
+    <Content Include="Content\img\post-tumblr.svg" />
+    <Content Include="Content\img\post-twitter.svg" />
+    <Content Include="Content\img\product-1.jpg" />
+    <Content Include="Content\img\product-2.jpg" />
+    <Content Include="Content\img\product-3.jpg" />
+    <Content Include="Content\img\product-4.JPG" />
+    <Content Include="Content\img\product-5.JPG" />
+    <Content Include="Content\img\product-6.JPG" />
+    <Content Include="Content\img\promo-1.PNG" />
+    <Content Include="Content\img\trusted.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\WebShop.css">
+      <DependentUpon>WebShop.less</DependentUpon>
+    </Content>
+    <Content Include="Content\WebShop.min.css">
+      <DependentUpon>WebShop.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -270,6 +302,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Content\WebShop.less" />
+    <Content Include="Content\CssModules\Cart.less" />
+    <Content Include="Content\CssModules\Toolbar.less" />
+    <Content Include="Content\CssModules\Footer.less" />
+    <Content Include="Content\CssModules\LayoutSpacings.less" />
+    <None Include="compilerconfig.json" />
+    <Content Include="Content\CssModules\PromotionGrid.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -325,10 +364,17 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Home\Welcome.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\_LeftSideNavPartial.cshtml" />
+    <Content Include="Views\Shared\_RightSideNavPartial.cshtml" />
+    <Content Include="Views\Shared\_ToolbarPartial.cshtml" />
+    <Content Include="Views\Shared\_FooterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\app\components\" />
+    <Folder Include="Content\app\catalog\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -372,7 +418,9 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\BuildWebCompiler.1.2.127\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildWebCompiler.1.2.127\build\BuildWebCompiler.targets'))" />
   </Target>
+  <Import Project="..\packages\BuildWebCompiler.1.2.127\build\BuildWebCompiler.targets" Condition="Exists('..\packages\BuildWebCompiler.1.2.127\build\BuildWebCompiler.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

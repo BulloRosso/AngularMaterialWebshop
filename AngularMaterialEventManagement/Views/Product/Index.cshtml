@@ -1,0 +1,101 @@
+﻿@using AngularMaterialWebshop.Models
+@{
+    ViewBag.Title = "Product";
+}
+@model Product
+<section ng-controller="ProductCtrl">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <md-button ng-click="toggleSidenav('left')" ng-hide="searchBoxVisible" hide-gt-sm class="md-icon-button icon-white">
+                <i class="material-icons">menu</i>
+            </md-button>
+
+            <a href="@Url.Action("welcome","index")"><img src="@Url.Content("~/Content/img/logo3.png")" class="logo" /></a>
+            <h1><strong style="font-weight:900">Lotus</strong><span style="font-weight:300"> Webshop</span></h1>
+            
+            <span flex></span>
+
+            <section hide-sm>
+                <md-button>
+                    Aktionen
+                </md-button>
+                <md-button>
+                    Sortiment
+                </md-button>
+                <md-button>
+                    Beratung
+                </md-button>
+            </section>
+            
+
+            <i class="material-icons">shopping_cart</i>
+            <i class="cart-badge">0</i>
+        </div>
+    </md-toolbar>
+    <md-tabs md-dynamic-height md-border-bottom style="background-color:#fff;">
+        <md-tab label="Details">
+        </md-tab>
+        <md-tab label="Bewertungen">
+        </md-tab>
+    </md-tabs>
+
+    <md-content class="md-padding product-description">
+
+        <div style="">
+            <img src="@Url.Content("~/Content/img/product-" + Model.Id + ".jpg")" style="width:90%;max-width:680px;margin:14px;" />
+        </div>
+
+        <h3>@Model.Title</h3>
+        <h4>@Model.Price €</h4>
+
+        <p>@Model.Description</p>
+
+        <div>
+
+        </div>
+
+    </md-content>
+    
+    <md-content class="md-padding product-specifiations">
+        <ul>
+            @foreach (var spec in Model.Specs) {
+                <li>@spec.Value</li>
+            }
+        </ul>
+
+    </md-content>
+
+    <md-content class="md-padding" layout="row">
+        
+        <md-fab-speed-dial md-open="isOpen" md-direction="{{demo.selectedDirection}}"
+                           class="md-scale">
+            <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-accent">
+                    <i class="material-icons">share</i>
+                </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+                <md-button aria-label="twitter" class="md-fab md-raised md-mini">
+                    <i class="material-icons">email</i>
+                </md-button>
+                <md-button aria-label="facebook" class="md-fab md-raised md-mini">
+                    <md-icon md-svg-src="/content/img/post-facebook.svg"></md-icon>
+                </md-button>
+                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                    <md-icon md-svg-src="/content/img/post-twitter.svg"></md-icon>
+                </md-button>
+            </md-fab-actions>
+        </md-fab-speed-dial>
+        <span flex></span>
+        <md-button ng-click="addToCart(@Model.Id)" class="md-fab md-primary" align="right" aria-label="In den Warenkorb">
+            <i class="material-icons">add_shopping_cart</i>
+        </md-button>
+        
+    </md-content>
+</section>
+@section scripts {
+
+    <script src="@Url.Content("~/Content/app/product/product.controller.js")"></script>
+    <script src="@Url.Content("~/Content/app/components/dialog.controller.js")"></script>
+}
+

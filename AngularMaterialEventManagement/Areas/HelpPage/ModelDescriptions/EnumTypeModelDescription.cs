@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions
+namespace AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions
 {
     public class EnumTypeModelDescription : ModelDescription
     {

@@ -53,7 +53,43 @@
             </md-tab>
             <md-tab label="Dates">
             <md-content flex="100" class="md-padding">
-                ab
+               
+                 <table style="width:100%" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                  <thead>
+                    <tr>
+                      <th class="mdl-data-table__cell--non-numeric cell-middle"><i class="material-icons">event</i></th>
+                      <th class="mdl-data-table__cell--non-numeric cell-middle"><i class="material-icons">location_on</i></th>
+                      <th class="cell-middle"><i class="material-icons">event_seat</i> avail.</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr >
+                      <td class="mdl-data-table__cell--non-numeric cell-middle">20.10 - 23.10.2015</td>
+                      <td class="mdl-data-table__cell--non-numeric cell-middle"><strong>Nueremberg</strong></td>
+                      <td class="cell-middle">25</td>
+                      <td><md-button style="position:relative;top:-6px;"  class="mdl-button mdl-js-button mdl-button--raised" ng-click="register()">Book</md-button> </td>
+                    </tr>
+                    <tr class="descr-text">
+                      <td class="mdl-data-table__cell--non-numeric cell-middle">20.11 - 23.11.2015</td>
+                      <td class="mdl-data-table__cell--non-numeric cell-middle"><strong>Munich</strong></td>
+                      <td class="cell-middle">0</td>
+                      <td> <md-button style="position:relative;top:-6px;" disabled class="mdl-button mdl-js-button mdl-button--raised" ng-click="register()">Book</md-button> </td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric cell-middle">03.12 - 06.12.2015</td>
+                      <td class="mdl-data-table__cell--non-numeric cell-middle"><strong>Hamburg</strong></td>
+                      <td class="cell-middle">10</td>
+                      <td> <md-button style="position:relative;top:-6px;" class="mdl-button mdl-js-button mdl-button--raised" ng-click="register()">Book</md-button> </td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <td class="mdl-data-table__cell--non-numeric descr-text cell-middle" style="background-color:#f5f5f5" colspan="4">
+                      <i class="material-icons">info_outline</i> You may cancel any booking 7 days prior to start date.
+                    </td>
+                  </tfoot>
+                </table>
+
             </md-content>
             </md-tab>
             <md-tab label="Participants">

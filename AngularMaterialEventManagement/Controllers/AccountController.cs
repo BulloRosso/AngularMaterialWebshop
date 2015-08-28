@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using AngularMaterialEventManagement.Models;
+using AngularMaterialWebshop.Models;
 
-namespace AngularMaterialEventManagement.Controllers
+namespace AngularMaterialWebshop.Controllers
 {
     [Authorize]
     public class AccountController : Controller

@@ -1,0 +1,67 @@
+﻿<md-sidenav class="md-sidenav-right md-whiteframe-z2" style="transition: all 0.3s ease-in-out" 
+            md-component-id="right">
+    <section ng-controller="RightCtrl">
+        <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools">
+                <h2>Ihr Warenkorb</h2>
+                <span flex></span>
+                <i ng-click="close()" style="color:black" class="material-icons">arrow_forward</i>
+            </div>
+        </md-toolbar>
+        <md-content layout="column" ng-controller="CartCtrl">
+
+            <md-content layout-padding layout-align="center center" ng-show="!hasItems()">
+                <div style="padding:20px;">
+                    Momentan haben Sie keine Artikel ausgewählt.
+                </div>
+            </md-content>
+
+            <md-content ng-show="hasItems()" layout="column" class="cart-item height-transition" 
+                        ng-repeat="item in CartItems" md-swipe-left="removeItem(item.LineId)" 
+                        id="cartline{{item.LineId}}">
+                <div class="inner-cart-item">
+                    <md-content layout="row" style="overflow:hidden">
+                        <div style="text-align:center;" flex>
+                            <img ng-src="/content/img/product-{{ item.Id }}.jpg" class="cart-product-img" alt="{{item.Title}}" />
+                        </div>
+                        <div style="padding-top:0px;color:#990000;">
+                            <i class="material-icons" ng-click="removeItem(item.LineId)" style="font-size:14px">close</i>
+                        </div>
+                    </md-content>
+                    <md-content layout="row" style="overflow:hidden">
+
+                        <div style="padding-top:0px;" flex>
+                            {{ item.Title }}
+                        </div>
+                        <div style="padding-right:20px;">
+                            <span ng-click="decQuantity(item)" style="outline: none;user-select: none;cursor:pointer;color:#999;">
+                                <i class="material-icons">chevron_left</i>
+                            </span>  <span>
+                                {{ item.Quantity }}
+                            </span>  <span ng-click="incQuantity(item)" style="outline: none;user-select: none;cursor:pointer;color:#999;">
+                                <i class="material-icons">chevron_right</i>
+                            </span>
+
+                        </div>
+                        <div style="font-weight:300;">
+                            {{ linePrice(item) }} €
+                        </div>
+                    </md-content>
+                </div>
+            </md-content>
+
+            <md-content ng-show="hasItems()" layout-padding layout="row" class="cart-item inner-cart-item cart-sum">
+                
+                <div>Gesamtpreis</div>
+                <div flex></div>
+                <div>
+                    {{ cartSum() }} €
+                </div>
+                
+            </md-content>
+
+            <md-button ng-show="hasItems()" style="margin-top:20px;" flex class="md-primary md-raised fade" flex>Zur Kasse</md-button>
+
+        </md-content>
+    </section>
+</md-sidenav>

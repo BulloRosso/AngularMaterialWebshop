@@ -1,18 +1,59 @@
-﻿<section ng-controller="IndexCtrl">
+﻿<section ng-controller="IndexCtrl as ctrl">
     
     <md-toolbar layout="row">
         <div class="md-toolbar-tools">
-            <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+            <md-button ng-click="toggleSidenav('left')" ng-hide="searchBoxVisible" hide-gt-sm class="md-icon-button">
                 <md-icon aria-label="Menu" md-svg-icon="//s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
             </md-button>
-            <h1>Browse Courses</h1>
-            <span flex></span>
-           
-            <div class="material-icons material-2x">event</div>
-             <div class="badge">
+            
+        
+
+            <h1 hide-sm ng-hide="searchBoxVisible">Browse Courses</h1>
+            <span layout="row" flex  layout-align="end center">
+
+                 <form ng-show="searchBoxVisible" layout="row" class="slide-toggle" flex ng-submit="$event.preventDefault()">
+                  
+                  <span ng-click="toggleSearchBox()" style="cursor:pointer;margin-right:10px;margin-top:8px;" ng-show="searchBoxVisible"><i class="material-icons">arrow_back</i></span>
+                  
+                  <md-autocomplete flex
+                      ng-keypress="submitSearch($event)"
+                      style="margin-right:10px"
+                      ng-disabled="ctrl.isDisabled"
+                      md-no-cache="ctrl.noCache"
+                      md-selected-item="ctrl.selectedItem"
+                      md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                      md-search-text="ctrl.searchText"
+                      md-selected-item-change="ctrl.selectedItemChange(item)"
+                      md-items="item in ctrl.querySearch(ctrl.searchText)"
+                      md-item-text="item.name"
+                      md-min-length="0"
+                      placeholder="Suchbegriff(e)"
+                      md-menu-class="autocomplete-custom-template">
+                    <md-item-template>
+                      <span class="item-title">
+                        <i class="material-icons">{{item.icon}}</i>
+                        <span> {{item.name}} </span>
+                      </span>
+                      <span class="item-metadata">
+                        <span class="item-metastat">
+                          <strong>{{item.watchers}}</strong> watchers
+                        </span>
+                        <span class="item-metastat">
+                          <strong>{{item.forks}}</strong> forks
+                        </span>
+                      </span>
+                    </md-item-template>
+                  </md-autocomplete>
+                </form>
+
+                <div ng-click="toggleSearchBox()" ng-hide="searchBoxVisible" style="cursor:pointer;margin-right:10px;" class="material-icons">search</div>
+            </span>
+            
+            <div hide-sm class="material-icons">shopping_cart</div>
+                <div hide-sm class="badge">
                 {{ EventListFiltered().length }}
             </div>
-
+            
         </div>
     </md-toolbar>
     <div layout="row" flex>
@@ -75,7 +116,7 @@
            
               <md-grid-tile-footer>
                     
-                  <h3 style="font-size:15px;text-shadow: 1px 1px 1px #000;">{{event.Title}}</h3>
+                  <h4 style="font-size:16px !important;text-shadow: 1px 1px 1px #000;font-weight:bold;">{{event.Title}}</h4>
 
               </md-grid-tile-footer>
             </md-grid-tile>

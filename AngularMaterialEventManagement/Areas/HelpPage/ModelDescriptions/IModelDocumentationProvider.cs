@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions
+namespace AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

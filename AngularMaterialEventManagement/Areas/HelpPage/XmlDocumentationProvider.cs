@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions;
+using AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage
+namespace AngularMaterialWebshop.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace AngularMaterialEventManagement.Models
+namespace AngularMaterialWebshop.Models
 {
     // Von MeController-Aktionen zurückgegebene Modelle.
     public class GetViewModel

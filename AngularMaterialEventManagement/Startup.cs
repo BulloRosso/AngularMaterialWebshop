@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(AngularMaterialEventManagement.Startup))]
+[assembly: OwinStartup(typeof(AngularMaterialWebshop.Startup))]
 
-namespace AngularMaterialEventManagement
+namespace AngularMaterialWebshop
 {
     public partial class Startup
     {

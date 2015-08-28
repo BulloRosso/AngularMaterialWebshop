@@ -1,0 +1,42 @@
+﻿<md-dialog aria-label="Zu Warenkorb hinzufügen">
+  <form>
+  <!--<md-toolbar class="md-accent">
+    <div class="md-toolbar-tools">
+      <h2><i hide-sm class="material-icons">add_shopping_cart</i> In den Warenkorb</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="answer('not applicable')">
+         <i class="material-icons">close</i>
+      </md-button>
+    </div>
+  </md-toolbar>-->
+  <md-dialog-content style="max-width:800px;max-height:810px; ">
+    <md-content layout="row">
+      <div ng-click="decCount()" class="no-focus" style="padding-top:24px;width:40px;cursor:pointer">
+		<i class="material-icons">remove</i>
+	  </div>
+      <md-input-container>
+          <label>Anzahl</label>
+          <input type="number" ng-Change="updateSum()" min="1" style="width:40px" ng-model="addCount">
+      </md-input-container>
+      <div ng-click="incCount()" class="no-focus" style="padding-top:24px;width:40px;cursor:pointer">
+		<i class="material-icons">add</i>
+	  </div>
+      <div style="width:40px" hide-sm></div>
+	  <md-input-container>
+          <label>Preis</label>
+          <input type="text" style="width:60px"  ng-model="addSum">
+      </md-input-container>
+    </md-content>
+  </md-dialog-content>
+  <div class="md-actions" layout="row" layout-align-sm="center center">
+    <md-button ng-click="answer('details')">
+      Abbruch
+    </md-button>
+    <div hide-sm flex style="width:50px;"></div>
+   
+    <md-button ng-click="answer('useful')" class="md-raised md-primary" style="margin-right:20px;">
+       OK
+    </md-button>
+  </div>
+  </form>
+</md-dialog>

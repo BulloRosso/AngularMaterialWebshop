@@ -1,264 +1,222 @@
-﻿body, input, button {
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
-    font-size: 1.2em;
+﻿ h4 {
+    font-size:16px;
+    /*font-weight:bold;*/
 }
 
-body {
-    background-color: #fff;
-    color: #333;
-    max-width: 980px; /*Remove this to make it full screen*/
-    margin: 1em auto;
+.md-default-theme {
+    /*//background-color:#e9e9e9;*/
 }
 
-button, input[type=submit] {
-    border: 1px solid #dedede;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+.icon-white {
+    color:#fff;
 }
-
-.content-wrapper {
-    margin: 0 auto;
-    max-width: 960px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-/*#region Header */
-
-header {
-    margin: 0 .7em;
-    position: relative;
-    z-index: -1;
-}
-
-    header p {
-        font-size: 2.5em;
-        margin: 0;
-    }
-
-#userSettings {
-    float: right;
-}
-
-    #userSettings > form:before {
-        content: ' | ';
-    }
-
-    #userSettings form {
-        display: inline;
-    }
-
-#menu {
-    list-style-type: none;
-    padding: 0;
-}
-
-    #menu li {
-        display: inline-block;
-    }
-
-    #menu li:not(:first-child) {
-        margin-left: .8em;
-    }
-
-/*#endregion */
-
-/*#region forms */
-
-#changePasswordForm input,
-#registerForm input,
-#loginForm input {
-    border: 1px solid #dedede;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-}
-
-    #changePasswordForm input[type=text], #changePasswordForm input[type=password],
-    #registerForm input[type=text], #registerForm input[type=password],
-    #loginForm input[type=text], #loginForm input[type=password] {
-        background: white;
-        width: 220px;
-    }
-
-#loginForm input[type=checkbox]{
-    border: none;
-}
-
-#changePasswordForm input[type=submit] {
-    margin-bottom: .8em;
-}
-
-#registerPanel{
-    display: none;
-    position: relative;
-    float: left;
-    text-align: left;
-    padding: 25px;
-}
-
-#loginPanel {
-    display: block;
-    position: relative;
-    float: left;
-    text-align: left;
-    padding: 25px;
-    width: 600px;
-}
-
-#registerPanel h2,
-#loginPanel h2 {
-    padding-bottom: .5em;
-    margin: 0;
-}
-
-#registerPanel a,
-#loginPanel a {
-    color: navy;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#registerPanel p,
-#loginPanel p {
-    clear: both;
-}
-
-#localLoginPanel {
-    border-right: solid 2px #c8c8c8;
-    float: left;
-    width: 45%;
-    text-align: left;
-}
-
-#socialLoginPanel {
-    margin-left: 40px;
-    float: left;
-    width: 45%;
-    text-align: left;
-}
-
-    #socialLoginPanel h2 {
-        margin-bottom:  5px;
-    }
-
-#socialLoginList button {
-    margin-bottom: 12px;
-}
-
-#externalLogins {
-    text-align: left;
-    padding-left: 25px;
-}
-
-fieldset {
-    border: none;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: left;
-    display: inline;
-}
-
-    fieldset legend {
-        display: none;
-    }
-
-    fieldset label:not(.checkbox) {
-        display: block;
-        text-align: left;
-    }
-
-    fieldset ol {
-        padding: 0;
-        margin: 0 0 8px 0;
-        list-style: none;
-    }
-
-        fieldset ol li {
-            padding-bottom: 5px;
-        }
-
-ol.round {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/*#endregion */
-
-#main-content {
-    min-height: 400px;
-    text-align: center;
-}
-
-/*#region info and errors */
-.error {
-    float: none;
-    color: red;
-    padding-left: .5em;
-    vertical-align: top;
-}
-
-.validation-summary-errors {
-    color: red;
-    list-style: none;
-    width: 220px;
-    font-size: .8em;
-}
-
-.validation-summary-errors ul{
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/*#endregion */
-
-/*#region Unauthorized */
-
-#unauthorized {
-    margin: 3em 0;
-    text-align: center;
-}
-
-    #unauthorized ul {
-        list-style: none;
-        padding: 0;
-        margin: 3em 0;
-    }
-
-    #unauthorized li {
-        display: inline-block;
-        padding: 6px 20px;
-        background-color: #dedede;
-        border: 1px solid gray;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-    }
-
-        #unauthorized li:first-child {
-            margin-right: 2em;
-        }
-
-/*#endregion */
-
-/*#region Footer */
 
 footer {
-    clear: both;
-    margin: 5em 5em .7em 0;
+    background-color:#808080 !important;
+    font-family:Roboto,Arial, Helvetica, sans-serif !important;
+    font-weight:300 !important;
+    margin-top:20px !important;
+    color:#ededed !important;
+    padding:20px !important;
+    font-size:15px !important;
 }
 
-/*#endregion */
+footer a {
+    font-family:Roboto,Arial, Helvetica, sans-serif !important;
+    font-weight:300 !important;
+    font-size:15px !important;
+    margin-top:8px;
+    margin-bottom:4px;
+}
 
-@media only screen and (max-width: 600px) {
+.cart-product-img {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    font-family:Roboto,Arial, Helvetica, sans-serif !important;
+    font-weight:400 !important;
+    font-size:15px !important;
+}
+
+.cart-sum {
+    background-color:#efefef;
+    font-weight:bold
+}
+
+.md-toolbar-tools .cart-badge {
+    border-radius:50%;
+    width:24px;
+    height:24px;
+    background-color:#EF6C00;
+    text-align:center;
+    vertical-align:middle;
+    display:inline-block;
+    color:#FFE0B2;
+    padding-top:2px;
+    font-size:11px;
+    font-style:normal;
+}
+
+.product-description {
+    padding-left:30px;
+}
+
+.product-description h3, .product-description h4 {
+    margin-top:0px;
+    margin-bottom:0px !important;
+}
+
+.product-description p {
+    color:#808080;
+    font-family:Roboto,Arial, Helvetica, sans-serif !important;
+    font-weight:400 !important;
+    font-size:17px !important;
+}
+
+.product-specifiations  {
+     background-color: rgb(249,249,249);
+}
+
+.product-specifiations li {
+   
+    font-size: 15px !important;
+    font-family: Roboto,Arial, Helvetica, sans-serif !important;
+    font-weight: 300 !important;
+}
+
+md-ink-bar {
+    background-color:#FFCA28 !important;
+    height:4px;
+}
+
+md-whiteframe {
+    background-color:#fff;
+}
+@media (max-width: 640px) {
 
     body {
-        margin: .2em 0;
+        background-color:#e9e9e9;
     }
 
-    header {
-        text-align: center;
-        clear: both;
+    md-content.grey {
+        background-color: #e9e9e9;
     }
+
+    h2.md-subheader.grey {
+        background-color: #e9e9e9 !important;
+    }
+}
+
+.md-toolbar-tools img.logo {
+    height:28px;
+    margin-right:12px;
+} 
+
+md-toolbar, md-toolbar .material-icons, md-toolbar .md-button {
+    color: white;
+}
+
+.search-product-img {
+    max-width:100px;
+    margin-right:20px;
+    margin-left:15px;
+}
+
+.md-list-item-text {
+    margin-right:40px;
+}
+
+.cell-middle {
+    vertical-align: middle !important;
+    padding-top:0px !important;
+           
+}
+.text-shadow {
+    text-shadow: 1px 1px 1px #000;
+}
+.material-2x {
+           
+    font-size: 36px;
+}
+.material-fix-badge-on-icon {
+          
+}
+.material-icons {
+    text-align:center;
+    vertical-align:middle;
+}
+.descr-text {
+    color:#888;
+}
+.no-bottom {
+    margin-bottom:4px;
+}
+.no-padding-top {
+    padding-top:0px;
+}
+.badge {
+    border-radius:50%;
+    position:relative;
+    top:-10px;
+    left:-10px;
+    width:22px;
+    height:22px;
+    font-size:14px;
+    background-color:gold;
+    text-align:center;
+    padding-top:3px;
+    font-weight:bold;
+    color:black;
+}
+.badge-inline {
+    border-radius:50%;
+    position:relative;
+    top:-35px;
+    left:22px;
+    width:22px;
+    height:22px;
+    font-size:14px;
+    background-color:gold;
+    text-align:center;
+    padding-top:3px;
+    font-weight:bold;
+    color:black;
+    text-shadow:none;
+}
+.pull-left {
+    float:left;
+}
+.pull-right {
+    float:right;
+}
+.text-alert {
+    color:rgb(244,67,54);
+}
+.bg-alert {
+    background:rgb(244,67,54);
+}
+.text-info {
+    color:gold;
+}
+.text-primary {
+    color: rgb(76,175,80);
+}
+.slide-toggle {
+    transition: all 1.0s; 
+}
+.item-metadata {
+    color:#808080;
+    margin-left:10px;
+    font-size:80%;
+}
+.no-focus:focus {
+    outline-width: 0;
+    cursor:pointer;
+}
+.text-figure {
+    margin-top:6px;
+    font-weight:bold;
 }

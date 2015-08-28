@@ -1,6 +1,6 @@
 using System;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions
+namespace AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

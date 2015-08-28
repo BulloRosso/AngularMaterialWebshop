@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Owin.Security.OAuth;
 
-namespace AngularMaterialEventManagement.Providers
+namespace AngularMaterialWebshop.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

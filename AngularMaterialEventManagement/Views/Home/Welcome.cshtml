@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+<section ng-controller="WelcomeCtrl" ng-init="$rootScope.isWelcome = true;$rootScope.itemsInCart = 3;" layout="row">
+
+    @Html.Partial("_LeftSideNavPartial")
+
+    <md-content layout="column" flex>
+
+        @Html.Partial("_ToolbarPartial")
+
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Aktionen">
+            </md-tab>
+            <md-tab label="Sortiment">
+            </md-tab>
+            <md-tab label="Beratung">
+            </md-tab>
+        </md-tabs>
+        <md-content layout-padding style="background-color:#efefef;overflow:hidden;padding-bottom:40px;">
+            <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                          md-row-height-gt-md="1:1" md-row-height="2:2"
+                          md-gutter="12px" md-gutter-gt-sm="8px">
+                <md-grid-tile ng-repeat="promo in Promotions" ng-class="promo.BackgroundColorCss" style=""
+                              md-rowspan="{{promo.RowSpan}}" md-colspan="{{promo.ColSpan}}" md-colspan-sm="{{promo.ColSpanSm}}">
+                    <md-grid-tile-header ng-show="{{isTextPromo(promo)}}" layout="row" layout-align="end center">
+                        <i class="material-icons" style="margin-right:10px;">{{ promo.IconName }}</i>
+                    </md-grid-tile-header>
+
+                    <img ng-show="promo.ImageUrl" ng-src="{{ promo.ImageUrl }}" ng-class="promo.CssClass" />
+
+                    <span ng-show="promo.Html" ng-bind-html="promo.Html"></span>
+
+                    <md-grid-tile-footer style="overflow:visible;">
+                        <md-button ng-show="promo.HasCallToAction" class="md-fab md-accent md-hue-2 promo-button" aria-label="Profile">
+                            <i class="material-icons">{{ promo.CallToActionIconName }}</i>
+                        </md-button>
+                        <h3>{{ promo.Title }}</h3>
+
+                    </md-grid-tile-footer>
+                </md-grid-tile>
+            </md-grid-list>
+        </md-content>
+       
+    </md-content>
+
+    @Html.Partial("_RightSideNavPartial")
+
+</section>
+
+@section scripts {
+    <script src="@Url.Content("~/Content/app/welcome/welcome.controller.js")"></script>
+    <script src="@Url.Content("~/Content/app/cart/cart.controller.js")"></script>
+    <script src="@Url.Content("~/Content/app/components/dialog.controller.js")"></script>
+}

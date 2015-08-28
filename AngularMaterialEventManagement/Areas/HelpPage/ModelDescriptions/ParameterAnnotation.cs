@@ -1,6 +1,6 @@
 using System;
 
-namespace AngularMaterialEventManagement.Areas.HelpPage.ModelDescriptions
+namespace AngularMaterialWebshop.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {
