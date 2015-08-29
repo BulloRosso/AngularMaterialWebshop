@@ -44,3 +44,7 @@ Hopefully, this demo will answer the questions above along with some other issue
 <li>Slide in for the offcanvas menu</li>
 <li>Slide out for deleted cart items</li>
 </ul>
+
+<p>The <strong>communication menu</strong> illustrates the use of subnavigation (tabs) inside the offcanvas element:</p>
+
+![_ws3](https://cloud.githubusercontent.com/assets/10236695/9561053/e45d0bc0-4e35-11e5-8407-0b9df8b539bd.JPG)
