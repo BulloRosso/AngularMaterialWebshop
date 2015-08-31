@@ -88,3 +88,17 @@ A lot of effort can be saved if out-of-the-box components can be deployed - like
 Today help should be interactive - so offering FAQs is fine: But connecting customers to the sales hotline seamlessly by <strong>live chat</strong> during the checkout-process is a must-have:
 </p>
 ![_checkout2](https://cloud.githubusercontent.com/assets/10236695/9581915/7d0e645e-5002-11e5-8d1f-2345c9b58047.PNG)
+
+<h2>Search experience</h2>
+
+<p>
+Search is somewhat basic in the current version: there's only the autocomplete search in the header:
+</p>
+
+![_search1](https://cloud.githubusercontent.com/assets/10236695/9589355/08f075cc-502e-11e5-8748-b5e326f8c0bd.PNG)
+
+<p>
+Search results are difficult to filter in mobile first design: There's no space to fit in all the facets. There's only one filter in the second navigation row:
+</p>
+
+![_search2](https://cloud.githubusercontent.com/assets/10236695/9589356/08f1391c-502e-11e5-9e22-4ed4901a0e7d.PNG)
