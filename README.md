@@ -5,7 +5,9 @@ A demo application using angular 1.4 and material design for angular 0.10 hosted
 
 <p>This is a proof of concept for an application using <strong>Google's Material Design</strong> instead of the predominant Bootstrap 3 framework.</p>
 
-![_flow](https://cloud.githubusercontent.com/assets/10236695/9574137/2473354c-4fc4-11e5-9aa5-7ad01b95ff5f.PNG)
+![_flow](https://cloud.githubusercontent.com/assets/10236695/9574176/86b796e4-4fc4-11e5-8301-0f21ed683d38.PNG)
+
+<p>Bold title in the diagram above indicate the areas of interest for this proof of concept.</p>
 
 <p>Attention: This is not a ready-to-go template or starter-kit!</p>
 
