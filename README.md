@@ -48,6 +48,18 @@ The main angular stuff as well as images and CSS is located in the /content/-fol
 </ul>
 </p>
 
+<h2>Product page</h2>
+
+<p>
+The product page is as plain as a product pages can get ;-) The only things worth to mention are:
+<ul>
+  <li>Fine grained use of typography</li>
+  <li>Call-to-action buttons (with flyout actions)</li>
+</ul>
+</p>
+
+![_product](https://cloud.githubusercontent.com/assets/10236695/9588179/0ad8b32e-5027-11e5-84af-4baca2cf2dc8.PNG)
+
 <p>The <strong>shopping cart</strong> showcases some animations:</p>
 
 ![_ws2](https://cloud.githubusercontent.com/assets/10236695/9558992/b5faffb0-4dec-11e5-92e3-6662057bf722.JPG)
