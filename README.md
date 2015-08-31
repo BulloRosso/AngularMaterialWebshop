@@ -46,6 +46,7 @@ The main angular stuff as well as images and CSS is located in the /content/-fol
 <li>Image tile with call-to-action button</li>
 <li>Text tile</li>
 </ul>
+</p>
 
 <p>The <strong>shopping cart</strong> showcases some animations:</p>
 
