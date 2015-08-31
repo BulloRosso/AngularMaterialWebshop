@@ -22,7 +22,7 @@
             <md-grid-list md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
                           md-row-height-gt-md="1:1" md-row-height="2:2"
                           md-gutter="12px" md-gutter-gt-sm="8px">
-                <md-grid-tile ng-repeat="promo in Promotions" ng-class="promo.BackgroundColorCss" style=""
+                <md-grid-tile ng-repeat="promo in Promotions" ng-click="gotoProduct()" ng-class="promo.BackgroundColorCss" style=""
                               md-rowspan="{{promo.RowSpan}}" md-colspan="{{promo.ColSpan}}" md-colspan-sm="{{promo.ColSpanSm}}">
                     <md-grid-tile-header ng-show="{{isTextPromo(promo)}}" layout="row" layout-align="end center">
                         <i class="material-icons" style="margin-right:10px;">{{ promo.IconName }}</i>
@@ -53,4 +53,18 @@
     <script src="@Url.Content("~/Content/app/welcome/welcome.controller.js")"></script>
     <script src="@Url.Content("~/Content/app/cart/cart.controller.js")"></script>
     <script src="@Url.Content("~/Content/app/components/dialog.controller.js")"></script>
+
+<script>
+    $(document).ready(function () {
+        $(window).resize(function () {
+            _adaptChatInputArea();
+        })
+    });
+
+    function _adaptChatInputArea() {
+        $(".chat-messages").css("height", parseInt($(".md-sidenav-left").height()) - 190);
+    }
+
+    _adaptChatInputArea();
+</script>
 }

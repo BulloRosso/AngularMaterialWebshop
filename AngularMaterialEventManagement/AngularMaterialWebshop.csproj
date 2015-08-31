@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.5</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -214,6 +216,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MeController.cs" />
@@ -252,11 +255,15 @@
     <Content Include="Content\app\search\search.controller.js" />
     <Content Include="Content\app\welcome\welcome.controller.js" />
     <Content Include="Content\app\welcome\welcome.html" />
+    <Content Include="Content\img\boy-512.png" />
     <Content Include="Content\img\fashion.PNG" />
     <Content Include="Content\img\house.PNG" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\logo2.png" />
     <Content Include="Content\img\logo3.png" />
+    <Content Include="Content\img\payment-method-1.PNG" />
+    <Content Include="Content\img\payment-method-2.PNG" />
+    <Content Include="Content\img\payment-method-3.PNG" />
     <Content Include="Content\img\post-facebook.svg" />
     <Content Include="Content\img\post-instagram.svg" />
     <Content Include="Content\img\post-linkedin.svg" />
@@ -270,6 +277,9 @@
     <Content Include="Content\img\product-5.JPG" />
     <Content Include="Content\img\product-6.JPG" />
     <Content Include="Content\img\promo-1.PNG" />
+    <Content Include="Content\img\shipment-method-1.PNG" />
+    <Content Include="Content\img\shipment-method-2.PNG" />
+    <Content Include="Content\img\shipment-method-3.PNG" />
     <Content Include="Content\img\trusted.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\WebShop.css">
@@ -303,12 +313,13 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Content\WebShop.less" />
-    <Content Include="Content\CssModules\Cart.less" />
+    <Content Include="Content\app\cart\Cart.less" />
     <Content Include="Content\CssModules\Toolbar.less" />
     <Content Include="Content\CssModules\Footer.less" />
     <Content Include="Content\CssModules\LayoutSpacings.less" />
     <None Include="compilerconfig.json" />
-    <Content Include="Content\CssModules\PromotionGrid.less" />
+    <Content Include="Content\app\welcome\PromotionGrid.less" />
+    <Content Include="Content\CssModules\Chat.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -371,6 +382,7 @@
     <Content Include="Views\Shared\_RightSideNavPartial.cshtml" />
     <Content Include="Views\Shared\_ToolbarPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -384,11 +396,15 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

@@ -3,35 +3,10 @@
     ViewBag.Title = "Product";
 }
 @model Product
-<section ng-controller="ProductCtrl">
-    <md-toolbar>
-        <div class="md-toolbar-tools">
-            <md-button ng-click="toggleSidenav('left')" ng-hide="searchBoxVisible" hide-gt-sm class="md-icon-button icon-white">
-                <i class="material-icons">menu</i>
-            </md-button>
+<section ng-controller="ProductCtrl" ng-init="$rootScope.itemsInCart = 3;">
+    
+    @Html.Partial("_ToolbarPartial")
 
-            <a href="@Url.Action("welcome","index")"><img src="@Url.Content("~/Content/img/logo3.png")" class="logo" /></a>
-            <h1><strong style="font-weight:900">Lotus</strong><span style="font-weight:300"> Webshop</span></h1>
-            
-            <span flex></span>
-
-            <section hide-sm>
-                <md-button>
-                    Aktionen
-                </md-button>
-                <md-button>
-                    Sortiment
-                </md-button>
-                <md-button>
-                    Beratung
-                </md-button>
-            </section>
-            
-
-            <i class="material-icons">shopping_cart</i>
-            <i class="cart-badge">0</i>
-        </div>
-    </md-toolbar>
     <md-tabs md-dynamic-height md-border-bottom style="background-color:#fff;">
         <md-tab label="Details">
         </md-tab>
@@ -42,7 +17,7 @@
     <md-content class="md-padding product-description">
 
         <div style="">
-            <img src="@Url.Content("~/Content/img/product-" + Model.Id + ".jpg")" style="width:90%;max-width:680px;margin:14px;" />
+            <img src="@Url.Content("~/Content/img/product-" + Model.Id + ".jpg")" style="width:90%;max-width:580px;margin:14px;" />
         </div>
 
         <h3>@Model.Title</h3>
@@ -65,7 +40,7 @@
 
     </md-content>
 
-    <md-content class="md-padding" layout="row">
+    <md-content class="md-padding" layout="row" style="margin-bottom:30px;">
         
         <md-fab-speed-dial md-open="isOpen" md-direction="{{demo.selectedDirection}}"
                            class="md-scale">

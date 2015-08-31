@@ -1,14 +1,71 @@
-﻿<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" style="transition: all 0.3s ease-in-out">
+﻿<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" style="overflow:hidden;transition: all 0.3s ease-in-out">
     <md-toolbar class=" md-accent">
         <div class="md-toolbar-tools">
             <i class="material-icons" ng-click="toggleNav()" style="color:black;width:35px;">arrow_backward</i>
-            <h2>Ihr Konto</h1>
-         </div>
+            <h2>Kommunikation</h1>
+        </div>
     </md-toolbar>
-    <md-content layout-padding ng-controller="LeftCtrl">
+    <md-content ng-controller="LeftCtrl">
 
-        <p>
-            Work in Progress
-        </p>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Mein Konto">
+
+                <md-content layout-padding style="background-color:#ffe996;padding:20px;font-family:Roboto;font-size:16px;">
+                    <strong>Ralph Göllner</strong>
+                    <img src="@Url.Content("~/Content/img/boy-512.png")"
+                         style="margin-left:20px;width:120px;border-radius:50%;xbox-shadow: rgb(125, 125, 125) 2px 3px 6px 0px;" />
+                </md-content>
+                <section class="nav-blocks">
+                    <md-content layout-padding flex>
+                        <i class="material-icons">library_books</i>
+                        <span>Meine Bestellungen</span>
+                    </md-content>
+                    <md-content layout-padding flex>
+                        <i class="material-icons">location_on</i>
+                        <span>Meine Adresse</span>
+                    </md-content>
+                    <md-content layout-padding flex>
+                        <i class="material-icons">credit_card</i>
+                        <span>Meine Bestellart</span>
+                    </md-content>
+                    <md-content layout-padding flex>
+                        <i class="material-icons">notifications_none</i>
+                        <span>Meine Benachrichtigungen</span>
+                    </md-content>
+                    <md-content layout-padding flex>
+                        <i class="material-icons">close</i>
+                        <span>Abmelden</span>
+                    </md-content>
+                </section>
+
+            </md-tab>
+            <md-tab label="Chat" id="chat-pane">
+
+                <md-content layout="column" layout-padding>
+                    <md-content class="chat-messages">
+                        <div class="speech-bubble speech-bubble-right">
+                            Ich hätte da mal eine Frage...
+                        </div>
+                        <div class="speech-bubble speech-bubble-left">
+                                Wie kann ich Ihnen helfen?
+                        </div>
+                    </md-content>
+
+                    <md-content layout="row" style="max-height:100px;overflow:hidden;">
+
+                        <md-input-container flex>
+                            <label>Ihre Nachricht</label>
+                            <input ng-model="chatMessage">
+                        </md-input-container>
+
+                        <i class="material-icons mini-button md-warn">send</i>
+
+                    </md-content>
+
+                </md-content>
+
+            </md-tab>
+        </md-tabs>
+
     </md-content>
 </md-sidenav>

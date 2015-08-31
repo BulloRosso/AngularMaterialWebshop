@@ -59,3 +59,17 @@
 .fade.ng-enter.ng-enter-active {
   opacity:1;
 }
+
+img.bw {
+    -webkit-filter: grayscale(0);
+	filter: grayscale(0%);
+}
+
+img.bw.grey {
+    -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+    -webkit-transition-property: filter;
+	transition-property: filter;
+    -webkit-transition-duration: 1s;
+	transition-duration: 1s;	
+}

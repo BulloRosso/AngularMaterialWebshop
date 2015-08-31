@@ -1,5 +1,13 @@
 ﻿app.run(['$rootScope', '$mdSidenav','$log', function ($rootScope, $mdSidenav, $log) {
 
+    $rootScope.checkOut = function () {
+        document.location.href = "/cart/checkout";
+    }
+
+    $rootScope.gotoProduct = function () {
+        document.location.href = "/product/index";
+    }
+
     // autocomplete
     
     $rootScope.simulateQuery = false;
@@ -32,6 +40,7 @@
     }
     function selectedItemChange(item) {
         $log.info('Item changed to ' + JSON.stringify(item));
+        location.href = "/search/index/" + encodeURIComponent(item.name);
     }
     /**
      * Build `components` list of key/value pairs
@@ -40,37 +49,37 @@
         var repos = [
           {
               icon: 'restore',
-              'name': 'Angular 1',
+              'name': 'Action Jackson',
               'url': 'https://github.com/angular/angular.js',
-              'watchers': '3,623',
-              'forks': '16,175',
+              'watchers': '623',
+              'forks': '75',
           },
           {
               icon: 'bookmark_border',
-              'name': 'Angular 2',
+              'name': 'Active Gel Hero',
               'url': 'https://github.com/angular/angular',
               'watchers': '469',
-              'forks': '760',
+              'forks': '60',
           },
           {
               icon: 'bookmark_border',
-              'name': 'Angular Material',
+              'name': 'Accelerated Turbine',
               'url': 'https://github.com/angular/material',
               'watchers': '727',
-              'forks': '1,241',
+              'forks': '20',
           },
           {
               icon: 'bookmark_border',
-              'name': 'Aower Material',
+              'name': 'Altiplano III',
               'url': 'https://github.com/angular/bower-material',
               'watchers': '42',
-              'forks': '84',
+              'forks': '4',
           },
           {
               icon: 'bookmark_border',
-              'name': 'aterial Start',
+              'name': 'Altiplano pro',
               'url': 'https://github.com/angular/material-start',
-              'watchers': '81',
+              'watchers': '181',
               'forks': '303',
           }
         ];
@@ -110,7 +119,7 @@
 
     $rootScope.submitSearch = function (keyEvt) {
         if (keyEvt.which === 13 && $rootScope.searchText.length > 0) {
-            location.href = "search/index/" + encodeURIComponent($rootScope.searchText);
+            location.href = "/search/index/" + encodeURIComponent($rootScope.searchText);
         }
     }
 

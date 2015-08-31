@@ -1,11 +1,11 @@
 ﻿<md-toolbar ng-controller="ToolbarCtrl">
     <div class="md-toolbar-tools">
-        <md-button ng-click="toggleNav()" ng-hide="searchBoxVisible" hide-gt-sm class="md-icon-button">
+        <md-button ng-click="toggleNav()" ng-hide="searchBoxVisible" class="md-icon-button">
             <i class="material-icons">menu</i>
         </md-button>
 
-        <a href="@Url.Action("welcome","index")"><img src="@Url.Content("~/Content/img/logo3.png")" class="logo" /></a>
-        <h1><strong style="font-weight:900">Lotus</strong><span style="font-weight:300"> Webshop</span></h1>
+        <a href="@Url.Action("welcome","home")"><img src="@Url.Content("~/Content/img/logo3.png")" class="logo hide-xs" /></a>
+        <h1 hide-sm><strong style="font-weight:900">Lotus</strong><span style="font-weight:300"> Webshop</span></h1>
 
         <span layout="row" flex layout-align="end center">
 
@@ -34,11 +34,11 @@
                             <span> {{item.name}} </span>
                         </span>
                         <span class="item-metadata">
+                            @*<span class="item-metastat">
+                                <strong>#{{item.watchers}}</strong> Besteller
+                            </span>*@
                             <span class="item-metastat">
-                                <strong>{{item.watchers}}</strong> watchers
-                            </span>
-                            <span class="item-metastat">
-                                <strong>{{item.forks}}</strong> forks
+                                <strong>{{item.forks}}</strong> Bewertungen
                             </span>
                         </span>
                     </md-item-template>

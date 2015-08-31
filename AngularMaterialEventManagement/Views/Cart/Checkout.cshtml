@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Checkout";
+}
+<section ng-controller="CartCtrl" layout="row"  ng-init="$rootScope.isWelcome = true;$rootScope.itemsInCart = 3;">
+
+    @Html.Partial("_LeftSideNavPartial")
+
+    <md-content layout="column"  ng-view flex>
+        <form>
+            @Html.Partial("_ToolbarPartial")
+
+            <md-content layout-padding layout="column" style="background-color:#efefef;padding-bottom:40px;">
+                <md-content  ng-show="!showPromoAndAddress"  class="md-whiteframe-z1" style="">
+
+                    <md-toolbar class="md-accent">
+                        <div class="md-toolbar-tools">
+                            <h2>
+                                <span>Wie möchten Sie bezahlen?</span>
+                            </h2>
+                            <span flex></span>
+
+                            <span style="color:black !important" ng-click="showPaymentHelp = !showPaymentHelp">
+                                <md-tooltip md-direction="left">
+                                    Häufig gestellte Fragen zur Bezahlung
+                                </md-tooltip>
+                                <i class="material-icons" style="color:black !important">help</i>
+                            </span> 
+
+                        </div>
+                    </md-toolbar>
+                    <md-content ng-show="showPaymentHelp" layout-padding style="background-color:#fcf3d2">
+                        <strong>Kann ich auch per Rechnung zahlen?</strong>
+                        <br />
+                        Diese Möglichkeit steht nur unseren registrierten B2B-Kunden zur Verfügung.
+                        <br /><br />
+                        <strong>Entstehen über Kreditkarte zusätzliche Gebühren?</strong>
+                        <br />
+                        Nein - die 3% übernehmen wir gerne für Sie!
+                        <br /><br />
+                        <i class="material-icons" style="color:#990000">chat</i> <a href="#" style="color:#990000">Chat mit Kundenbetreuer öffnen</a>
+                    </md-content>
+
+                    <md-content layout-padding>
+                        <md-radio-group ng-model="PaymentMethod">
+                            <md-radio-button ng-repeat="it in PaymentMethods"
+                                             ng-value="it.id"
+                                             aria-label="{{it.title}}">
+                                <img class="bw" ng-class="{ 'grey' : PaymentMethod != it.id }" src="/content/img/payment-method-{{it.id}}.png" style="max-width:200px;width:60%;margin-left:10px;margin-bottom:20px;margin-top:20px;">
+                            </md-radio-button>
+                        </md-radio-group>
+                    </md-content>
+                </md-content>
+
+                <md-content  ng-show="!showPromoAndAddress" class="md-whiteframe-z1" style="margin-top:10px;">
+                    <md-toolbar class="md-accent">
+                        <div class="md-toolbar-tools">
+                            <h2>
+                                <span>Wie sollen wir liefern?</span>
+                            </h2>
+                            <span flex></span>
+
+                            <span style="color:black !important" ng-click="showShipmentHelp = !showShipmentHelp">
+                                <md-tooltip md-direction="left">
+                                    Häufig gestellte Fragen zur Lieferung
+                                </md-tooltip>
+                                <i class="material-icons" style="color:black !important">help</i>
+                            </span> 
+                        </div>
+                    </md-toolbar>
+                    <md-content ng-show="showShipmentHelp" layout-padding style="background-color:#fcf3d2">
+                        <strong>Liefern Sie auch am Wochende?</strong>
+                        <br />
+                        Ja - dazu wählen Sie bitte Hermes als Versandart.
+                        <br /><br />
+                        <strong>Unterstützen Sie die DHL Paketabholstationen?</strong>
+                        <br />
+                        Zur Zeit leider nicht - wir bieten diese Funktion aber Ende 2015 an.
+                        <br /><br />
+                        <i class="material-icons" style="color:#990000">chat</i> <a href="#" style="color:#990000">Chat mit Kundenbetreuer öffnen</a>
+                    </md-content>
+                    <md-content layout-padding>
+
+                        <md-radio-group ng-model="ShipmentMethod">
+                            <md-radio-button ng-repeat="it in ShipmentMethods"
+                                             ng-value="it.id"
+                                             aria-label="{{it.title}}">
+                                <img class="bw" ng-class="{ 'grey' : ShipmentMethod != it.id }" src="/content/img/shipment-method-{{it.id}}.png" style="max-width:200px;width:80%;margin-left:10px;margin-bottom:20px;margin-top:20px;;">
+                            </md-radio-button>
+                        </md-radio-group>
+
+                    </md-content>
+                </md-content>
+
+                <md-content ng-show="showPromoAndAddress" class="md-whiteframe-z1" style="margin-top:10px;">
+                    <md-toolbar class="md-accent">
+                        <div class="md-toolbar-tools">
+                            <h2>
+                                <span>Promotionscode einlösen?</span>
+                            </h2>
+                        </div>
+                    </md-toolbar>
+
+                    <md-content layout-padding>
+                        
+                            <md-input-container>
+                                <label>Sie finden den Code auf unseren Rechnungen</label>
+                                <input md-minlength="10" md-maxlength="10" name="description" ng-model="project.description">
+                                <div ng-messages="projectForm.description.$error">
+                                    <div ng-message="md-maxlength">Der Code ist genau 10 Zeichen lang.</div>
+                                </div>
+                            </md-input-container>
+                    </md-content>
+                </md-content>
+
+                <md-content  ng-show="showPromoAndAddress" class="md-whiteframe-z1" style="margin-top:10px;">
+                    <md-toolbar class="md-accent">
+                        <div class="md-toolbar-tools">
+                            <h2>
+                                <span>Lieferadresse</span>
+                            </h2>
+                        </div>
+                    </md-toolbar>
+
+                    <md-content layout-padding>
+
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>Vorname</label>
+                                <input ng-model="user.firstName">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Nachname</label>
+                                <input ng-model="theMax">
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>Strasse / Hausnr.</label>
+                                <input ng-model="user.address">
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>PLZ</label>
+                                <input ng-model="user.city">
+                            </md-input-container>
+
+                            <md-input-container flex>
+                                <label>Ort</label>
+                                <input ng-model="user.postalCode">
+                            </md-input-container>
+                        </div>
+                        <div layout layout-sm="column">
+                            <md-input-container flex>
+                                <label>Anmerkungen</label>
+                                <textarea ng-model="user.biography" columns="1" md-maxlength="150"></textarea>
+                            </md-input-container>
+                        </div>
+                    </md-content>
+                </md-content>
+
+                <md-button ng-disabled="ShipmentMethod == null || PaymentMethod == null" ng-click="checkOut(1)" style="margin-top:20px;" flex class="md-primary md-raised fade" flex>Weiter</md-button>
+
+            </md-content>
+        </form>
+    </md-content>
+    
+</section>
+@section scripts {
+
+    <script src="@Url.Content("~/Content/app/cart/cart.controller.js")"></script>
+
+}
