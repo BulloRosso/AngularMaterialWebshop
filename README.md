@@ -34,7 +34,7 @@ The main angular stuff as well as images and CSS is located in the /content/-fol
 </p>
 ![_appstructure](https://cloud.githubusercontent.com/assets/10236695/9581916/7d10cdca-5002-11e5-94f5-4a35e7c28f2d.PNG)
 
-<h2>Example use case: Webshop</h2>
+<h2>Example use case: Mobile First! design shop</h2>
 
 ![_ws1](https://cloud.githubusercontent.com/assets/10236695/9558921/f0e45032-4deb-11e5-8ba6-0481dedaaf8b.JPG)
 
@@ -51,10 +51,12 @@ The main angular stuff as well as images and CSS is located in the /content/-fol
 
 ![_ws2](https://cloud.githubusercontent.com/assets/10236695/9558992/b5faffb0-4dec-11e5-92e3-6662057bf722.JPG)
 
+<p>
 <ul>
 <li>Slide in for the offcanvas menu</li>
 <li>Slide out for deleted cart items</li>
 </ul>
+</p>
 
 <p>The <strong>communication menu</strong> illustrates the use of subnavigation (tabs) inside the offcanvas element:</p>
 
