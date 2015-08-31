@@ -68,6 +68,6 @@ A lot of effort can be saved if out-of-the-box components can be deployed - like
 </p>
 ![_checkout1](https://cloud.githubusercontent.com/assets/10236695/9581917/7d13fd10-5002-11e5-9bfd-6a8c0c8d0fc6.PNG)
 <p>
-Today help should be interactive - so offering FAQs is fine: But connecting customers to the sales hotline seamlessly during the checkout-process is a must-have:
+Today help should be interactive - so offering FAQs is fine: But connecting customers to the sales hotline seamlessly by <strong>live chat</strong> during the checkout-process is a must-have:
 </p>
 ![_checkout2](https://cloud.githubusercontent.com/assets/10236695/9581915/7d0e645e-5002-11e5-8d1f-2345c9b58047.PNG)
