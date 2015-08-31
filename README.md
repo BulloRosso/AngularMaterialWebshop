@@ -5,6 +5,8 @@ A demo application using angular 1.4 and material design for angular 0.10 hosted
 
 <p>This is a proof of concept for an application using <strong>Google's Material Design</strong> instead of the predominant Bootstrap 3 framework.</p>
 
+![_flow](https://cloud.githubusercontent.com/assets/10236695/9574137/2473354c-4fc4-11e5-9aa5-7ad01b95ff5f.PNG)
+
 <p>Attention: This is not a ready-to-go template or starter-kit!</p>
 
 <p>Attention: This is not a single page application! AngularJS is just used to extend single pages - the heavylifting is done by ASP.NET MVC views and controllers.
