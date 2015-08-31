@@ -60,6 +60,8 @@ The product page is as plain as a product pages can get ;-) The only things wort
 
 ![_product](https://cloud.githubusercontent.com/assets/10236695/9588179/0ad8b32e-5027-11e5-84af-4baca2cf2dc8.PNG)
 
+<h2>Off-canvas menus</h2>
+
 <p>The <strong>shopping cart</strong> showcases some animations:</p>
 
 ![_ws2](https://cloud.githubusercontent.com/assets/10236695/9558992/b5faffb0-4dec-11e5-92e3-6662057bf722.JPG)
