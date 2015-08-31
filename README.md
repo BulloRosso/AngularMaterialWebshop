@@ -7,7 +7,7 @@ A demo application using angular 1.4 and material design for angular 0.10 hosted
 
 ![_flow](https://cloud.githubusercontent.com/assets/10236695/9574176/86b796e4-4fc4-11e5-8301-0f21ed683d38.PNG)
 
-<p>Bold title in the diagram above indicate the areas of interest for this proof of concept.</p>
+<p>Bold titles in the diagram above indicate the areas of interest for this proof of concept.</p>
 
 <p>Attention: This is not a ready-to-go template or starter-kit!</p>
 
