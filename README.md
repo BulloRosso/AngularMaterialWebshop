@@ -79,7 +79,7 @@ The product page is as plain as a product pages can get ;-) The only things wort
 
 <p>There are some issues regarding the offcanvas element (sidenav) with the current version 0.10 of angular-material like the height of the element.</p>
 
-<h2>User guidance</h2>
+<h2>Checkout process</h2>
 <p>
 A lot of effort can be saved if out-of-the-box components can be deployed - like in situations where some users might be in need of assistance. The checkout process is a typical use-case:
 </p>
@@ -88,6 +88,16 @@ A lot of effort can be saved if out-of-the-box components can be deployed - like
 Today help should be interactive - so offering FAQs is fine: But connecting customers to the sales hotline seamlessly by <strong>live chat</strong> during the checkout-process is a must-have:
 </p>
 ![_checkout2](https://cloud.githubusercontent.com/assets/10236695/9581915/7d0e645e-5002-11e5-8d1f-2345c9b58047.PNG)
+
+<p>
+Probably the most distinctive feature of material design is the different look &amp; feel of forms:
+</p>
+
+![_forms](https://cloud.githubusercontent.com/assets/10236695/9590873/afc0da46-5037-11e5-9a52-60472013efea.PNG)
+
+<p>
+I personally like this kind of form design because it is so much lighter than the usual box arrays. Error messages appear much more natural below the input fields - compared to the common Bootstrap popovers.
+</p>
 
 <h2>Search experience</h2>
 
